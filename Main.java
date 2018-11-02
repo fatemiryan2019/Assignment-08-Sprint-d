@@ -1,57 +1,33 @@
-public class Main {
 
-    public static double workEffort;
+public class Main{
 
-    public static void main(String[] args) {
-        workEffort = 0;
-
-        addWork(20);
-        addWork(40);
-        addWork(40);
-        addWork(50);
-        addWork(80);
-        addWork(100);
-        addWork(160);
-        addWork(240);
-        addWork(360);
-        addWork(500);
-
-        calcCapacity(8,3,30);
-        calcCapacity(8,4,30);
-        calcCapacity(8,5,30);
-        calcCapacity(8,6,30);
-        calcCapacity(9,3,30);
-        calcCapacity(10,3,30);
-        calcCapacity(11,3,30);
-
-        calcCapacity(8,3,35);
-        calcCapacity(8,4,35);
-        calcCapacity(8,5,35);
-        calcCapacity(8,6,35);
-        calcCapacity(9,3,35);
-        calcCapacity(10,3,35);
-        calcCapacity(11,3,35);
-
-        calcCapacity(8,3,40);
-        calcCapacity(8,4,40);
-        calcCapacity(8,5,40);
-        calcCapacity(8,6,40);
-        calcCapacity(9,3,40);
-        calcCapacity(10,3,40);
-        calcCapacity(11,3,40);
-
-
+    public static void calc(int wrk, int wks, int devs){
+        double time = 1590;
+        double fin = (time/devs)/(wrk*wks)*100;
+        System.out.printf("After %d devs of working a %d week sprint and %d hrs/wk it would be at %.0f%% of capacity.%n",devs,wks,wrk,fin);
     }
 
-    public static void addWork(double time) {
-        workEffort += time;
-    }
-
-    public static void calcCapacity(int eng, int wks, int hpw) {
-        double capacity = workEffort / (eng * wks * hpw);
-        System.out.printf("\nAfter %d devs for a %d week sprint, for %d hours/week, the total would be at %d%% of capacity.\n\n",eng,wks,hpw,(int)(capacity*100));
+    public static void main(String[] args){
+        calc(8,30,3);
+        calc(8,35,3);
+        calc(8,40,3);
+        calc(9,30,3);
+        calc(9,35,3);
+        calc(9,40,3);
+        calc(10,30,3);
+        calc(10,35,3);
+        calc(10,40,3);
+        calc(11,30,3);
+        calc(11,35,3);
+        calc(11,40,3);
+        calc(8,30,4);
+        calc(8,35,4);
+        calc(8,40,4);
+        calc(8,30,5);
+        calc(8,35,5);
+        calc(8,40,5);
+        calc(8,30,6);
+        calc(8,35,6);
+        calc(8,40,6);
     }
 }
-
-
-
